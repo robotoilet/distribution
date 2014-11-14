@@ -7,7 +7,7 @@
     "request-json": "~0.4.13",
     "underscore": "~1.7.0",
     "winston": "^0.8.1",
-    "data-utils": "^0.1.0"
+    "data-utils": "robotoilet/data-utils"
   },
   "devDependencies": {
     "mocha": "~2.0.1",
