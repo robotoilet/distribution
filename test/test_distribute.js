@@ -1,5 +1,4 @@
-var requireFrom = require('require-from')
-  , should = require('should')
+var should = require('should')
   , _ = require('underscore')
   , nock = require('nock')
   , logger = require('../lib/logger')
