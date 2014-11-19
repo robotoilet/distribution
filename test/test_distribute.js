@@ -33,7 +33,7 @@ describe('distribute_mainfunction', function() {
       http_api.done();
       done()
     }
-    distribute(auth, dataString, nockHappy);
+    distribute(auth, dataString, logger.error, nockHappy);
   });
   afterEach(function(){
     nock.cleanAll();
