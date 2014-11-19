@@ -2,13 +2,8 @@ var should = require('should')
   , _ = require('underscore')
   , nock = require('nock')
   , logger = require('../lib/logger')
+  , config = require('iol_conf')
   , distribute = require('../lib/distribute');
-
-
-// TODO: move config to own node module
-var config = {};
-config.httpApi = "http://localhost:8086";
-config.dbName = "toilets";
 
 
 describe('distribute_mainfunction', function() {
@@ -17,7 +12,7 @@ describe('distribute_mainfunction', function() {
   var dataString = "sensorschmensor (123 456) (789 10)";
   var dataObj = [
     {
-      name: 'clientX_toiletX_sensorschmensor',
+      name: 'punterX_siteX_sensorschmensor',
       columns: ['time', 'line'],
       points: [[123, 456], [789, 10]]
     }
@@ -29,9 +24,9 @@ describe('distribute_mainfunction', function() {
   });
   it('should convert a data string and post as json to the http api', function(done) {
     var auth = {
-      id: 'clientX_toiletX',
-      username: 'clientX',
-      password:'clientX'
+      id: 'punterX_siteX',
+      username: 'punterX',
+      password:'punterX'
     };
     function nockHappy(msg) {
       logger.debug(msg);
