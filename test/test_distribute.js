@@ -9,7 +9,7 @@ var should = require('should')
 describe('distribute_mainfunction', function() {
   var http_api;
   var dbUrl = "/db/" + config.dbName + "/series";
-  var dataString = "sensorschmensor (123 456) (789 10)";
+  var dataString = "(d 123 456)(d 789 10)";
   var dataObj = [
     {
       name: 'punterX_siteX_sensorschmensor',
