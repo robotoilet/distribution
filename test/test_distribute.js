@@ -14,7 +14,7 @@ describe('distribute_mainfunction', function() {
     {
       name: 'punterX_siteX_sensorschmensor',
       columns: ['time', 'line'],
-      points: [[123, 456], [789, 10]]
+      points: [[123000, 456], [789000, 10]]
     }
   ];
   beforeEach(function(){
