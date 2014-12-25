@@ -24,9 +24,7 @@ describe('distribute_mainfunction', function() {
   ];
   beforeEach(function(){
     http_api = nock(config.httpApi)
-      .post(dbUrl, dataObj[0])
-      .reply(200)
-      .post(dbUrl, dataObj[1])
+      .post(dbUrl, dataObj)
       .reply(200);
   });
   it('should convert a data string and post as json to the http api', function(done) {
@@ -38,11 +36,8 @@ describe('distribute_mainfunction', function() {
     var counter = 0;
     function nockHappy(msg) {
       logger.debug(msg);
-      counter ++;
-      if (counter === 2) {
-        http_api.done();
-        done();
-      }
+      http_api.done();
+      done();
     }
     distribute(auth, dataString, logger.error, nockHappy);
   });
